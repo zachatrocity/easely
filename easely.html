@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+      #genInfo{
+        font-weight: bold;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    
+  </head>
+  <body>
+    <div id="genInfo">Please Log in to Easel</div>
+    <form id="loginForm">
+      <label>Username:</label>
+      <input id="username" type="text" required>
+      <label>Password:</label>
+      <input id="passwd" type="password" required>
+      <br>
+      <button id="submitButton">Submit</button>
+    </form>
+    <div id="classesView" style="display: none; width: 400px;"></div>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="easely.js"></script>
+  </body>
+</html>
+

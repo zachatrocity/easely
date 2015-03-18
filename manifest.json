@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "Easely",
+  "description": "This extension adds all class homework/project/quizzes/tests to your google calendar.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "easely.png",
+    "default_popup": "easely.html",
+    "default_title": "Click to sync with Easel"
+  },
+
+  "content_scripts": [
+        {
+        "matches": [
+            "https://cs.harding.edu/easel/cgi-bin/*"
+            ],
+        "js": ["js/jquery-2.1.3.min.js", "content.js"],
+        "run_at": "document_end"         // pay attention to this line
+        }
+    ], 
+
+  "background":
+  {
+      "scripts": ["js/jquery-2.1.3.min.js", "easely.js"]
+  },
+
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "tabs"
+  ]
+}
