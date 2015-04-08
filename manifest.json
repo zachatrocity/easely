@@ -23,12 +23,15 @@
 
   "background":
   {
-      "scripts": ["js/jquery-2.1.3.min.js", "easely.js"]
+      "scripts": ["js/jquery-2.1.3.min.js","easely.js"]
   },
+
+  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
 
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/",
+    "https://*.google.com/",
     "tabs"
   ]
 }
